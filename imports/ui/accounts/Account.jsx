@@ -23,6 +23,7 @@ import i18n from 'meteor/universe:i18n';
 import Coin from '/both/utils/coins.js';
 
 const T = i18n.createComponent();
+let timer = 0;
 
 const cloneDeep = require('lodash/cloneDeep');
 
@@ -221,6 +222,10 @@ export default class AccountDetails extends Component{
 
     componentDidMount(){
         this.getBalance();
+
+        timer = Meteor.setInterval(() => {
+            this.getBalance();
+        },10000)
     }
 
     componentDidUpdate(prevProps){
@@ -508,7 +513,7 @@ export default class AccountDetails extends Component{
                                     <TabPane tabId="cdp-bnb">
                                         {/* <CDP /> */}
                                         {this.state.user===this.state.address?
-                                        <CDP owner={this.state.address} collateral='bnb' 
+                                        <CDP owner={this.state.address} collateral='bnb' total={this.state.total}
                                         />: null}
                                     </TabPane>
                                 </TabContent>
