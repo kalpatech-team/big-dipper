@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+* [#306] Display errors with SDK v0.38 format
+* [#301] Using Jazzicon as avatar if no Keybase avatar exists
+* [#297] Prettify unrecognized JSON messages
+* [#294] Fixed cloneDeep typo in Account section for case-sensitve filesystems.
+* [#284] Support Tendermint v0.33 block format
 * [#303] Fixed wrong validator display in unjail message
 * [#294] Fixed cloneDeep typo in Account section for case-sensitve filesystems.
 * [#288] Add Secp256p1 validator pubkey type. A new paramemter in public setting is added to control whether the validator pubkey is seck256p1 or default ed25519. If `secp256k1` in `settings.json` is set to `true`, it will see all validator pubkeys in Secp256k1 format.
